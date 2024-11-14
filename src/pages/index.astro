@@ -1,0 +1,105 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Sidebar from "../layouts/Sidebar.astro";
+import Header from "../components/Header.astro";
+import Code from "../components/jsx/Code";
+import Background from "../components/jsx/Background";
+import "@/styles/globals.css";
+---
+
+<Layout title="Purrfect UI">
+  <Sidebar class="lg:hidden" />
+  <Header />
+
+  <!-- Fondo con opacidad inicial -->
+  <div class="fixed fill w-full h-full flex-1 opacity-5">
+    <Background client:only color="white" />
+  </div>
+
+  <!-- Cursor personalizado -->
+  <div class="mouse-glow"></div>
+  <div class="mouse-cursor"></div>
+  <div class="mouse-cursor-ring"></div>
+
+  <main></main>
+</Layout>
+
+<style>
+  /* Cursor Glow */
+  .mouse-cursor,
+  .mouse-cursor-ring {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease;
+    transform: translate(-50%, -50%); /* Centra los elementos */
+  }
+
+  /* MouseCursor */
+  .mouse-cursor {
+    display: none;
+    top: -8px;
+    left: -8px;
+    width: 16px;
+    height: 16px;
+  }
+
+  .mouse-cursor:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #fff;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.5);
+    transform: scale(0.5);
+  }
+
+  /* MouseCursorRing */
+  .mouse-cursor-ring {
+    display: none;
+    top: -5vh;
+    left: -5vh;
+    width: 10vh;
+    height: 10vh;
+    opacity: 0.5;
+    transition: 0.8s cubic-bezier(0.05, 0.8, 0.4, 1);
+  }
+
+  .mouse-cursor-ring:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border: thin solid #fff;
+    border-radius: 50%;
+    transform: scale(1);
+    transition: 0.2s linear;
+  }
+
+  @media (min-width: 576px) {
+    .mouse-cursor,
+    .mouse-cursor-ring {
+      display: block;
+    }
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener("mousemove", (e) => {
+    const cursor = document.querySelector(".mouse-cursor");
+    const ring = document.querySelector(".mouse-cursor-ring");
+
+    // Mueve todos los cursores al mismo lugar sin desplazamiento extra
+    const x = e.clientX;
+    const y = e.clientY;
+
+    cursor.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+    ring.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+  });
+</script>
