@@ -1,0 +1,26 @@
+---
+import PurrLogo from "../../public/images/purrfect-logo-left.svg?url";
+import Code from "../components/Code.astro";
+import Bento from "../components/Bento.astro";
+---
+
+<section
+  class="flex flex-col lg:flex-row justify-around xl:items-center lg:gap-10 w-screen h-screen px-12 lg:px-20 2xl:px-32 pt-28 lg:pt-0"
+>
+  <div class="flex flex-col lg:basis-1/2 xl:basis-2/3 justify-center">
+    <h1 class="text-6xl lg:text-6xl xl:text-7xl font-bold mt-8 lg:mt-0">
+      Design purrfection for your web apps
+    </h1>
+    <p class="text-xl font-light text-pretty mt-8">
+      Seamlessly integrate stylish, modern components into your projects, with
+      effortless animations and no extra styling needed.
+    </p>
+    <Code code="npm install purrfectui-astro-components" codeClass="mt-8" />
+  </div>
+  <div
+    class="flex flex-col w-full justify-center items-end lg:basis-1/2 mt-16 lg:mt-0"
+  >
+    <Code code="npm install your-own-code" codeClass="mb-4 hidden lg:block" />
+    <Bento />
+  </div>
+</section>

@@ -1,0 +1,36 @@
+---
+import { BentoGrid, BentoGridItem } from "../components/jsx/Bento"; // Ajusta la ruta si es necesario
+---
+
+<BentoGrid
+  className="grid auto-rows-[18rem] grid-cols-3 gap-4 max-w-7xl w-full"
+>
+  <BentoGridItem
+    className="col-span-1 bg-gradient-to-r from-primary/50 to-secondary/50 appearance-none"
+    title="Item 1"
+    description="This is the description for item 1."
+    header="Header 1"
+    icon="🚀"
+  />
+  <BentoGridItem
+    className="col-span-2 bg-gradient-to-r from-primary/50 to-secondary/50 appearance-none"
+    title="Item 2"
+    description="This is the description for item 2."
+    header="Header 2"
+    icon=""
+  />
+  <BentoGridItem
+    className="col-span-2 bg-gradient-to-r from-primary/50 to-secondary/50 appearance-none"
+    title="Item 3"
+    description="This is the description for item 3."
+    header="Header 3"
+    icon="🚀"
+  />
+  <BentoGridItem
+    className="col-span-1 bg-gradient-to-r from-primary/50 to-secondary/50 appearance-none"
+    title="Item 4"
+    description="This is the description for item 4."
+    header="Header 4"
+    icon="🚀"
+  />
+</BentoGrid>

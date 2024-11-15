@@ -1,48 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Sidebar from "../layouts/Sidebar.astro";
-import Header from "../components/Header.astro";
-import Code from "../components/jsx/Code";
-import Background from "../components/jsx/Background";
+import Navbar from "../components/Navbar.astro";
+import Cursor from "../components/Cursor.astro";
+import Background from "../components/Background.astro";
+import Intro from "../components/Intro.astro";
 import "@/styles/globals.css";
 ---
 
 <Layout title="Purrfect/UI">
   <Sidebar class="lg:hidden" />
-  <Header />
-  <div
-    class="fixed inset-0 flex-1 opacity-5 pointer-events-none mix-blend-multiply transition-opacity duration-300 ease-in-out group-hover:opacity-30"
-  >
-    <Background client:only color="white" />
-  </div>
-  <div
-    class="fixed inset-0 flex-1 pointer-events-none mix-blend-multiply hidden md:flex"
-  >
-    <Background client:only color="#83ffff" isMasked={true} />
-  </div>
-
-  <div
-    class="mouse-cursor fixed hidden md:block pointer-events-none z-[9999] translate-x-[-50%] translate-y-[-50%] top-[-8px] left-[-8px] w-4 h-4 before:content-[''] before:absolute before:inset-0 before:bg-white before:border-2 before:border-transparent before:rounded-full before:shadow-[0_0_25px_rgba(0,0,0,0.5)] before:scale-50"
-  >
-  </div>
-  <div
-    class="mouse-cursor-ring fixed hidden md:block pointer-events-none z-[9999] translate-x-[-50%] translate-y-[-50%] top-[-5vh] left-[-5vh] w-[10vh] h-[10vh] opacity-50 transition-all duration-[800ms] ease-[cubic-bezier(0.05,0.8,0.4,1)] before:content-[''] before:absolute before:inset-0 before:border before:border-white before:rounded-full before:scale-100 before:transition-transform before:duration-300"
-  >
-  </div>
-
-  <main></main>
+  <Navbar />
+  <Intro />
+  <Background />
+  <Cursor />
 </Layout>
-
-<script is:inline>
-  document.addEventListener("mousemove", (e) => {
-    const cursor = document.querySelector(".mouse-cursor");
-    const ring = document.querySelector(".mouse-cursor-ring");
-
-    // Mueve todos los cursores al mismo lugar sin desplazamiento extra
-    const x = e.clientX;
-    const y = e.clientY;
-
-    cursor.style.transform = `translate3d(${x}px, ${y}px, 0)`;
-    ring.style.transform = `translate3d(${x}px, ${y}px, 0)`;
-  });
-</script>

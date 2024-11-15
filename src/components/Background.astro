@@ -1,0 +1,14 @@
+---
+import BackgroundComponent from "../components/jsx/Background";
+---
+
+<div
+  class="fixed inset-0 flex-1 opacity-5 pointer-events-none mix-blend-multiply transition-opacity duration-300 ease-in-out group-hover:opacity-30"
+>
+  <BackgroundComponent client:only color="white" />
+</div>
+<div
+  class="fixed inset-0 flex-1 pointer-events-none mix-blend-multiply hidden md:flex"
+>
+  <BackgroundComponent client:only color="#83ffff" isMasked={true} />
+</div>

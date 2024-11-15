@@ -20,8 +20,11 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="md:cursor-[none]">
-    <slot />
+    <main>
+      <slot />
+    </main>
   </body>
+  <script is:inline src="/js/animations.js"></script>
 </html>
 
 <style is:global>
