@@ -1,0 +1,14 @@
+{
+    "name": "purrfect-ui-background",
+    "version": "1.0.0",
+    "main": "index.tsx",
+    "scripts": {
+      "build": "tsup index.tsx --format esm,cjs --dts"
+    },
+    "keywords": ["background", "ui", "purrfect-ui"],
+    "author": "Raúl García",
+    "license": "MIT",
+    "peerDependencies": {
+      "react": "^18.0.0"
+    }
+}

@@ -1,11 +1,31 @@
 import React, { useMemo, useState, useEffect } from "react";
 
-const Background = ({ color, stroke = "", gap = 100, transform = "", isMasked = false }) => {
-    const { x, y, k } = transform || { x: 0, y: 0, k: 1 };
+interface Transform {
+    x: number;
+    y: number;
+    k: number;
+}
+
+interface BackgroundProps {
+    color?: string;
+    stroke?: string | number;
+    gap?: number;
+    transform?: Transform;
+    isMasked?: boolean;
+}
+
+const Background: React.FC<BackgroundProps> = ({
+    color = "#dddddd",
+    stroke = 1,
+    gap = 100,
+    transform = { x: 0, y: 0, k: 1 },
+    isMasked = false,
+}) => {
+    const { x, y, k } = transform;
     const scaledGap = gap * k;
 
-    const [gridDimensions, setGridDimensions] = useState({ numCols: 0, numRows: 0 });
-    const [mousePos, setMousePos] = useState({ x: -9999, y: -9999 });
+    const [gridDimensions, setGridDimensions] = useState<{ numCols: number; numRows: number }>({ numCols: 0, numRows: 0 });
+    const [mousePos, setMousePos] = useState<{ x: number; y: number }>({ x: -9999, y: -9999 });
 
     useEffect(() => {
         const updateGridDimensions = () => {
@@ -14,11 +34,11 @@ const Background = ({ color, stroke = "", gap = 100, transform = "", isMasked = 
             setGridDimensions({ numCols, numRows });
         };
 
-        if (isMasked) {
-            const handleMouseMove = (e) => {
-                setMousePos({ x: e.clientX, y: e.clientY });
-            };
+        const handleMouseMove = (e: MouseEvent) => {
+            setMousePos({ x: e.clientX, y: e.clientY });
+        };
 
+        if (isMasked) {
             window.addEventListener("mousemove", handleMouseMove);
         }
 
@@ -33,7 +53,7 @@ const Background = ({ color, stroke = "", gap = 100, transform = "", isMasked = 
 
     const squares = useMemo(() => {
         const { numCols, numRows } = gridDimensions;
-        const squarePaths = [];
+        const squarePaths: JSX.Element[] = [];
         for (let row = 0; row < numRows; row++) {
             for (let col = 0; col < numCols; col++) {
                 const xPos = col * scaledGap + (x % scaledGap);
@@ -44,8 +64,8 @@ const Background = ({ color, stroke = "", gap = 100, transform = "", isMasked = 
                         key={`${row}-${col}`}
                         d={pathD}
                         fill="none"
-                        stroke={color || "#dddddd"}
-                        strokeWidth={stroke || 1}
+                        stroke={color}
+                        strokeWidth={Number(stroke)}
                     />
                 );
             }
@@ -67,7 +87,7 @@ const Background = ({ color, stroke = "", gap = 100, transform = "", isMasked = 
                     </mask>
                 </defs>
             )}
-            <g mask={isMasked ? "url(#cursor-mask)" : ""}>
+            <g mask={isMasked ? "url(#cursor-mask)" : undefined}>
                 {squares}
             </g>
         </svg>

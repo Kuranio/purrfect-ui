@@ -1,0 +1,4 @@
+{
+  "packages": ["src/components/ui/*"],
+  "version": "independent"
+}
