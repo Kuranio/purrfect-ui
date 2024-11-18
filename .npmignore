@@ -1,0 +1,5 @@
+# Excluir configuraciones y archivos no deseados
+/tsconfig.json
+/tsup.config.ts
+/tests/
+/*.md

@@ -1,15 +1,19 @@
 {
   "name": "purrfect-ui",
   "version": "1.0.0",
-  "main": "index.ts",
-  "types": "index.d.ts",
+  "main": "src/components/ui/index.ts",
+  "types": "src/components/ui/index.d.ts",
   "files": [
-    "components/ui/**/*"
+    "src/components/ui/**/*"
   ],
-  "scripts": {
-    "build": "tsup components/ui/index.ts --format esm,cjs --dts"
+  "dependencies": {
+    "purrfect-ui-background": "^1.0.1",
+    "purrfect-ui-bento": "^1.0.1"
   },
   "peerDependencies": {
     "react": "^18.0.0"
+  },
+  "scripts": {
+    "build": "tsup src/components/ui/index.ts --format esm,cjs --dts"
   }
 }
