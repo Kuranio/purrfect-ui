@@ -1,9 +1,17 @@
 {
     "name": "purrfect-ui-bento",
-    "version": "1.0.3",
-    "main": "bento.tsx",
-    "types": "bento.d.ts",
+    "version": "1.0.0",
+    "main": "dist/index.js",
+    "module": "dist/index.esm.js",
+    "types": "dist/index.d.ts",
+    "files": [
+      "dist"
+    ],
     "scripts": {
-        "build": "tsup bento.tsx --format esm,cjs --dts"
+      "build": "tsup index.ts --format esm,cjs --dts"
+    },
+    "peerDependencies": {
+      "react": "^18.0.0"
     }
-}
+  }
+  
