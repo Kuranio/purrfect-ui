@@ -1,6 +1,6 @@
 {
     "name": "purrfect-ui-bento",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "main": "bento.tsx",
     "types": "bento.d.ts",
     "scripts": {
