@@ -1,0 +1,9 @@
+42 error Error: Command failed with exit code 128: git tag purrfect-ui-bento@1.0.1 -m purrfect-ui-bento@1.0.1
+42 error fatal: tag 'purrfect-ui-bento@1.0.1' already exists
+42 error     at makeError (/Users/raulgarciadiaz/Dev/purrfect-ui/node_modules/execa/lib/error.js:59:11)
+42 error     at handlePromise (/Users/raulgarciadiaz/Dev/purrfect-ui/node_modules/execa/index.js:114:26)
+42 error     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+42 error     at async Promise.all (index 0)
+42 error     at async VersionCommand.gitCommitAndTagVersionForUpdates (/Users/raulgarciadiaz/Dev/purrfect-ui/node_modules/lerna/dist/index.js:9957:11)
+42 error     at async VersionCommand.commitAndTagUpdates (/Users/raulgarciadiaz/Dev/purrfect-ui/node_modules/lerna/dist/index.js:9933:18)
+42 error     at async Promise.all (index 0)

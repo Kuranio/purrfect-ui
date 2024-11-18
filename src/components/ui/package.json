@@ -1,14 +1,14 @@
 {
   "name": "purrfect-ui",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "main": "src/components/ui/index.ts",
   "types": "src/components/ui/index.d.ts",
   "files": [
     "src/components/ui/**/*"
   ],
   "dependencies": {
-    "purrfect-ui-background": "^1.0.1",
-    "purrfect-ui-bento": "^1.0.1"
+    "purrfect-ui-background": "^1.0.3",
+    "purrfect-ui-bento": "^1.0.3"
   },
   "peerDependencies": {
     "react": "^18.0.0"
