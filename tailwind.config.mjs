@@ -63,9 +63,6 @@ export default {
           },
         },
       },
-      maskImage: {
-        fade: "radial-gradient(circle, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%)",
-      },
     },
   },
   plugins: [],

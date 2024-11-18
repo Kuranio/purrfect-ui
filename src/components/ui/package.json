@@ -1,0 +1,15 @@
+{
+  "name": "purrfect-ui",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "types": "index.d.ts",
+  "files": [
+    "components/ui/**/*"
+  ],
+  "scripts": {
+    "build": "tsup components/ui/index.ts --format esm,cjs --dts"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0"
+  }
+}

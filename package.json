@@ -32,6 +32,6 @@
     "tsup": "^8.3.5"
   },
   "workspaces": [
-    "components/ui/*"
+    "src/components/ui/*"
   ]
 }

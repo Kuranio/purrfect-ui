@@ -1,0 +1,9 @@
+{
+    "name": "purrfect-ui-bento",
+    "version": "1.0.0",
+    "main": "bento.tsx",
+    "types": "bento.d.ts",
+    "scripts": {
+        "build": "tsup bento.tsx --format esm,cjs --dts"
+    }
+}
