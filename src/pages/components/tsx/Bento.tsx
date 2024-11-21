@@ -12,7 +12,7 @@ const features = [
     background: (
       <img 
         className="w-full h-full pointer-events-none opacity-50 object-cover rounded-lg" 
-        src="../../public/images/demo-bento-grid/neon-image-2.avif" 
+        src="@/images/demo-bento-grid/neon-image-2.avif" 
         alt="Neon image preview" 
       />
     ),
@@ -27,7 +27,7 @@ const features = [
     background: (
       <img 
         className="w-full h-full pointer-events-none opacity-50 object-cover rounded-lg" 
-        src="../public/images/demo-bento-grid/neon-image-3.webp" 
+        src="@/images/demo-bento-grid/neon-image-3.webp" 
         alt="Neon image preview" 
       />
     ),
@@ -42,7 +42,7 @@ const features = [
     background: (
       <img 
         className="w-full h-full pointer-events-none opacity-50 object-cover rounded-lg" 
-        src="../public/images/demo-bento-grid/neon-image-4.webp" 
+        src="@/images/demo-bento-grid/neon-image-4.webp" 
         alt="Neon image preview" 
       />
     ),
@@ -57,7 +57,7 @@ const features = [
     background: (
       <img 
         className="w-full h-full pointer-events-none opacity-50 object-cover rounded-lg" 
-        src="../public/images/demo-bento-grid/neon-image-5.webp" 
+        src="@/images/demo-bento-grid/neon-image-5.webp" 
         alt="Neon image preview" 
       />
     ),
