@@ -3,16 +3,27 @@
 
 <div align="center">
   <h3 align="center">Purrfect UI</h3>
+  
+  <a href="https://purrfect-ui.netlify.app/"> Site </a>
 
   <p align="center">
       Design <span style="font-weight: bold; color: #fd80fb;">purrfection</span> for your web apps
   </p>
 
-  
+  <div align="center">
+
+  <a href="https://purrfect-ui.netlify.app/">
+
+  ![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7)
+
+  </a>
+
+  </div>
+
   ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
   ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
   ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
-
+  
 </div>
 
 
