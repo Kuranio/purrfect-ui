@@ -3,8 +3,6 @@
 
 <div align="center">
   <h3 align="center">Purrfect UI</h3>
-  
-  <a href="https://purrfect-ui.netlify.app/"> Site </a>
 
   <p align="center">
       Design <span style="font-weight: bold; color: #fd80fb;">purrfection</span> for your web apps
