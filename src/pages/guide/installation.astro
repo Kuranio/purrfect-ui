@@ -1,0 +1,206 @@
+---
+import { Button, Tab, TabItem } from "free-astro-components";
+import Article from "../../components/Article.astro";
+import CodeBlock from "../../components/CodeBlock.astro";
+import Content from "../../layouts/Content.astro";
+import Header from "../../components/Header.astro";
+import Heading from "../../components/Heading.astro";
+import Layout from "../../layouts/Layout.astro";
+import Link from "../../components/Link.astro";
+import List from "../../components/List.astro";
+import ListItem from "../../components/ListItem.astro";
+import Preview from "../../components/Preview.astro";
+import Prose from "../../components/Prose.astro";
+import Sidebar from "../../layouts/Sidebar.astro";
+import Text from "../../components/Text.astro";
+//
+import "@/styles/globals.css";
+
+const importComponentCode = `import { Avatar } from '@purrfect-ui/components'`;
+const useComponentCode = `const avatars = [
+  {
+    name: "Raúl García",
+    src: "https://unavatar.io/github/kuranio",
+    description: "Frontend Developer",
+  },
+  {
+    name: "Héctor Olivares",
+    src: "https://unavatar.io/github/hectorOliSan",
+    description: "Backend Developer",
+  },
+  {
+    name: "Joaquin Pastore",
+    src: "https://unavatar.io/github/JoaquinJPB",
+    description: "Frontend Developer",
+  },
+  {
+    name: "Alvaro Estévez",
+    src: "https://unavatar.io/github/alvaroem17",
+    description: "Web Developer",
+  },
+];
+
+export function AvatarDemo() {
+  return (
+    <div className="flex -space-x-4 rtl:space-x-reverse mb-4">
+      {avatars.map((avatar, idx) => (
+        <div key={idx}>
+          <Avatar
+            name={avatar.name}
+            src={avatar.src}
+            description={avatar.description}
+          />
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default AvatarDemo;`;
+
+const installTailwind = `npm install tailwindcss postcss autoprefixer 
+npx tailwindcss init`;
+
+const tailwindCSS = `@tailwind base;
+@tailwind components;
+@tailwind utilities;`;
+
+const tailwindPaths = `/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@purrfect-ui/components/dist/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};`;
+---
+
+<Layout title="Purrfect UI Components - Installation Guide">
+  <Header />
+  <Sidebar />
+  <Content>
+    <section>
+      <Article>
+        <Heading
+          slot="header"
+          level={1}
+          gradient
+          class="inline-block"
+          text="Installation Guide"
+        />
+        <Prose>
+          <Heading level={2} text="Prerequisites" />
+          <Text>
+            Before you can start using the Free Astro Components, you need to
+            have the following prerequisites installed on your machine:
+          </Text>
+          <List>
+            <ListItem>
+              <Text>
+                <strong>Node</strong>: Make sure you have Node.js installed. You
+                can download it from <Link
+                  href="https://nodejs.org/"
+                  target="_blank">Node.js</Link
+                >.
+              </Text>
+            </ListItem>
+            <ListItem>
+              <Text
+                ><strong>React</strong>: Your project should use React (version
+                18 or higher). You can follow the <Link
+                  href="https://react.dev/learn/add-react-to-an-existing-project"
+                  target="_blank">React documentation</Link
+                > to get started.
+              </Text>
+            </ListItem>
+            <ListItem>
+              <Text
+                ><strong>Tailwind</strong>: Purrfect UI is styled with Tailwind
+                CSS. Ensure Tailwind CSS is installed and configured in your
+                project.
+              </Text>
+            </ListItem>
+          </List>
+        </Prose>
+      </Article>
+      <Article>
+        <Heading slot="header" level={2} text="Installing Tailwind" />
+        <Prose>
+          <Text>
+            If Tailwind is not set up, follow the Tailwind CSS installation
+            guide:
+          </Text>
+          <CodeBlock lang="bash" code={installTailwind} />
+          <Text>
+            Add Tailwind CSS to your project configuration (e.g.,
+            tailwind.config.js) and include it in your CSS file:
+          </Text>
+          <CodeBlock lang="css" code={tailwindCSS} />
+          <Heading level={4} text="Configure your template paths:" />
+          <Text> tailwind.config.ts </Text>
+          <CodeBlock lang="typescript" code={tailwindPaths} />
+        </Prose>
+      </Article>
+      <Article>
+        <Heading slot="header" level={2} text="Installing the Components" />
+        <Prose>
+          <Heading level={3} text="1. Install the Package" />
+          <Text>
+            To use the Free Astro Components, you need to install the package
+            via npm. Run the following command in your project directory:
+          </Text>
+          <CodeBlock lang="bash" code="npm i @purrfect-ui/components" />
+          <Heading level={3} text="2. Import the Components" />
+          <Text>
+            Once the package is installed, you can import the components you
+            need into your Astro pages or components. For example:
+          </Text>
+          <CodeBlock lang="typescript" code={importComponentCode} />
+          <Heading level={3} text="3. Use the Components" />
+          <Text>
+            After importing, you can use the components in your project. Here's
+            an example of how to use the Avatar component:
+          </Text>
+          <Tab tabs={[{ label: "Preview", active: true }, { label: "Code" }]}>
+            <TabItem active>
+              <Preview>
+                <div class="ps-10 pt-12">
+                  <!-- <AvatarDemo /> -->
+                </div>
+              </Preview>
+            </TabItem>
+            <TabItem>
+              <CodeBlock lang="typescript" code={useComponentCode} />
+            </TabItem>
+          </Tab>
+        </Prose>
+        <Prose>
+          <Heading level={2} text="Additional Information" />
+          <List>
+            <ListItem>
+              <Text>
+                <strong>Support</strong>: If you encounter any issues or have
+                questions, feel free to open an issue on our <Link
+                  href="https://github.com/kuranio/purrfect-ui"
+                  target="_blank">GitHub repository.</Link
+                >
+              </Text>
+            </ListItem>
+          </List>
+        </Prose>
+        <Prose>
+          <Heading level={2} text="Next Steps" />
+          <Text>
+            Now that you have the components installed, you can start
+            integrating them into your project. Check out the <Link
+              href="/components/background">Component Guide</Link
+            > for detailed information on how to use each component.
+          </Text>
+        </Prose>
+      </Article>
+    </section>
+  </Content>
+</Layout>

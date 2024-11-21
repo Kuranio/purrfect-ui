@@ -1,0 +1,127 @@
+---
+import { basicUsageCode, importCode, UsageCode } from "../../data/code";
+import { Button as ButtonAc, Tab, TabItem } from "free-astro-components";
+import Article from "../../components/Article.astro";
+import CodeBlock from "../../components/ui/CodeBlock";
+import Content from "../../layouts/Content.astro";
+import Header from "../../components/Header.astro";
+import Heading from "../../components/Heading.astro";
+import Layout from "../../layouts/Layout.astro";
+import List from "../../components/List.astro";
+import ListItem from "../../components/ListItem.astro";
+import Preview from "../../components/Preview.astro";
+import Prose from "../../components/Prose.astro";
+import Sidebar from "../../layouts/Sidebar.astro";
+import Text from "../../components/Text.astro";
+import CodeComponent from "../../components/ui/Code";
+import "@/styles/globals.css";
+---
+
+<Layout title="Purrfect UI Components - Code">
+  <Header />
+  <Sidebar />
+  <Content>
+    <section>
+      <Article>
+        <Heading
+          slot="header"
+          level={1}
+          gradient
+          class="inline-block"
+          text="Code"
+        />
+        <Prose>
+          <Tab tabs={[{ label: "Preview", active: true }, { label: "Code" }]}>
+            <TabItem active>
+              <Preview>
+                <CodeComponent
+                  client:only="react"
+                  code="npm i @purrfect-ui/components"
+                />
+              </Preview>
+            </TabItem>
+            <TabItem>
+              <CodeBlock
+                client:only="react"
+                lang="typescript"
+                code={basicUsageCode}
+              />
+            </TabItem>
+          </Tab>
+        </Prose>
+        <Prose>
+          <Heading level={2} text="Import" />
+          <Text>
+            To use the Code component in your project, import it as follows:
+          </Text>
+          <CodeBlock client:only="react" lang="typescript" code={importCode} />
+        </Prose>
+        <Prose>
+          <Heading level={2} text="Usage" />
+          <Text>
+            The Code component is designed to make embedding and showcasing code
+            snippets seamless. Here's an example of its basic usage:
+          </Text>
+          <Heading level={3} text="Basic Usage" />
+          <Tab tabs={[{ label: "Code", active: true }]}>
+            <TabItem active>
+              <CodeBlock
+                client:only="react"
+                lang="typescript"
+                code={UsageCode}
+              />
+            </TabItem>
+          </Tab>
+        </Prose>
+        <Prose>
+          <Heading level={2} text="Key Features" />
+          <List>
+            <ListItem>
+              <Text>
+                <strong>Syntax Highlighting</strong>: Automatic language
+                detection for better readability.
+              </Text>
+            </ListItem>
+            <ListItem>
+              <Text>
+                <strong>Customizable Themes</strong>: Supports multiple themes
+                for code block styling.
+              </Text>
+            </ListItem>
+            <ListItem>
+              <Text>
+                <strong>Responsive Design</strong>: Scales beautifully across
+                devices.
+              </Text>
+            </ListItem>
+            <ListItem>
+              <Text>
+                <strong>Integrates Easily</strong>: Works out of the box with
+                minimal setup required.
+              </Text>
+            </ListItem>
+            <ListItem>
+              <Text>
+                <strong>Lightweight</strong>: Designed to be fast and
+                performant.
+              </Text>
+            </ListItem>
+          </List>
+        </Prose>
+      </Article>
+    </section>
+  </Content>
+</Layout>
+
+<style>
+  .custom-button {
+    --ac-btn-border-radius: 999px;
+    --ac-btn-font-weight: 600;
+    border-width: 0;
+    background-image: linear-gradient(
+      90deg,
+      rgb(var(--ac-primary)) 0%,
+      rgb(var(--ac-secondary)) 100%
+    );
+  }
+</style>

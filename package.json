@@ -1,0 +1,40 @@
+{
+  "name": "@purrfect-ui/components",
+  "author": "@kuranio",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build && lerna run build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/netlify": "^5.5.4",
+    "@astrojs/react": "^3.6.2",
+    "@astrojs/tailwind": "^5.1.2",
+    "@astrojs/ts-plugin": "^1.10.4",
+    "@astrojs/vercel": "^7.8.2",
+    "@rollup/plugin-typescript": "^12.1.1",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "astro": "^4.16.12",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.11.17",
+    "free-astro-components": "^1.1.1",
+    "next-themes": "^0.4.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.3.0",
+    "react-syntax-highlighter": "^15.4.3",
+    "tailwind-merge": "^2.5.4",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.6.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.15",
+    "@types/react-syntax-highlighter": "^15.5.13",
+    "lerna": "^8.1.9",
+    "tsup": "^8.3.5"
+  }
+}

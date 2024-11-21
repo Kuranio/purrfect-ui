@@ -1,0 +1,24 @@
+---
+import BackgroundComponent from "../components/ui/Background";
+import Cursor from "../components/ui/Cursor";
+
+const colors = ["#83ffff", "#fd80fb"];
+const randomColor = colors[Math.floor(Math.random() * colors.length)];
+---
+
+<div
+  class="fixed inset-0 flex-1 opacity-5 pointer-events-none mix-blend-multiply transition-opacity duration-300 ease-in-out group-hover:opacity-30"
+>
+  <BackgroundComponent client:only="react" color="white" />
+</div>
+<div
+  class="fixed inset-0 flex-1 pointer-events-none mix-blend-multiply hidden md:flex"
+>
+  <BackgroundComponent
+    client:only="react"
+    color={randomColor}
+    isMasked={true}
+    showCursor={true}
+  />
+</div>
+<Cursor client:only="react" />

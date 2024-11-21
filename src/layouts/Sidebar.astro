@@ -1,0 +1,73 @@
+---
+import Nav from "../components/Nav.astro";
+import NavItem from "../components/NavItem.astro";
+import NavLink from "../components/NavLink.astro";
+
+const { class: className } = Astro.props;
+---
+
+<aside
+  data-nav
+  class:list={[
+    "fixed left-0 inset-y-0 -translate-x-full [&[open]]:translate-x-0 lg:translate-x-0 w-full lg:w-72 bg-neutral-100/95 lg:bg-neutral-100/60 backdrop-blur-md pt-[83px] z-10 transition-transform duration-300 ease-in-out",
+    className,
+  ]}
+>
+  <div
+    class="w-full h-full lg:border-r border-neutral-300/50 px-5 py-4 overflow-y-auto"
+  >
+    <Nav>
+      <NavItem title="Guide" open>
+        <NavLink href="/guide/installation" label="Installation" />
+        <NavLink
+          href="/guide/colors"
+          label="Colors (Soon...)"
+          class="opacity-25 pointer-events-none"
+        />
+        <NavLink
+          href="/guide/customize-colors"
+          label="Customize Colors (Soon...)"
+          class="opacity-25 pointer-events-none"
+        />
+      </NavItem>
+      <NavItem title="Components" open>
+        <NavLink href="/components/background" label="Background + Cursor" />
+        <NavLink href="/components/bento" label="Bento" />
+        <NavLink href="/components/avatar" label="Avatar" />
+        <NavLink href="/components/button" label="Light Button" />
+        <NavLink href="/components/code" label="Code" />
+        <NavLink
+          href="/components/codeblock"
+          label="Syntax Highlighted Code Block"
+        />
+        <NavLink
+          class="opacity-25 pointer-events-none"
+          href="#"
+          label="Marquee (Soon...)"
+        />
+        <NavLink
+          class="opacity-25 pointer-events-none"
+          href="#"
+          label="Tabs (Soon...)"
+        />
+        <NavLink
+          class="opacity-25 pointer-events-none"
+          href="#"
+          label="Calendar (Soon...)"
+        />
+        <NavLink
+          class="opacity-25 pointer-events-none"
+          href="#"
+          label="Notification (Soon...)"
+        />
+      </NavItem>
+      <NavItem title="Resources" open>
+        <NavLink
+          class="opacity-25 pointer-events-none"
+          href="/resources/available-icons"
+          label="Available Icons (Soon...)"
+        />
+      </NavItem>
+    </Nav>
+  </div>
+</aside>

@@ -1,0 +1,23 @@
+---
+import Nav from "../components/Nav.astro";
+import NavItem from "../components/NavItem.astro";
+import NavLink from "../components/NavLink.astro";
+
+const { class: className } = Astro.props;
+---
+
+<aside
+  data-nav
+  class:list={[
+    "fixed right-0 inset-y-0 -translate-x-full [&[open]]:translate-x-0 lg:translate-x-0 w-full lg:w-48 bg-neutral-100/95 lg:bg-neutral-100/60 backdrop-blur-md pt-[83px] z-10 transition-transform duration-300 ease-in-out",
+    className,
+  ]}
+>
+  <div
+    class="w-full h-full lg:border-l border-neutral-300/50 px-5 py-4 overflow-y-auto"
+  >
+    <Nav>
+      <NavLink href="/guide/installation" label="Github" />
+    </Nav>
+  </div>
+</aside>

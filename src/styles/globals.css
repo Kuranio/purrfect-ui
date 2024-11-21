@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.vibration {
+  transition: all 0.8s;
+  display: inline-block;
+}
+.vibration:hover {
+  animation: vibrate 0.08s linear infinite forwards;
+}
+@keyframes vibrate {
+  0% {
+    transform: translateX(-1px) translateY(1px);
+  }
+  100% {
+    transform: translateX(1px) translateY(-2px);
+  }
+}

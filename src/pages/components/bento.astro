@@ -1,0 +1,116 @@
+---
+import { basicUsageCode, importCode, UsageCode } from "../../data/bento";
+import { Button as ButtonAc, Tab, TabItem } from "free-astro-components";
+import Article from "../../components/Article.astro";
+import CodeBlock from "../../components/ui/CodeBlock";
+import Content from "../../layouts/Content.astro";
+import Header from "../../components/Header.astro";
+import Heading from "../../components/Heading.astro";
+import Layout from "../../layouts/Layout.astro";
+import List from "../../components/List.astro";
+import ListItem from "../../components/ListItem.astro";
+import Preview from "../../components/Preview.astro";
+import Prose from "../../components/Prose.astro";
+import Sidebar from "../../layouts/Sidebar.astro";
+import Text from "../../components/Text.astro";
+import BentoDemo from "../components/tsx/Bento";
+import "@/styles/globals.css";
+---
+
+<Layout title="Purrfect UI Components - Bento Grid">
+  <Header />
+  <Sidebar />
+  <Content>
+    <section>
+      <Article>
+        <Heading
+          slot="header"
+          level={1}
+          gradient
+          class="inline-block"
+          text="Bento Grid"
+        />
+        <Prose>
+          <Tab tabs={[{ label: "Preview", active: true }, { label: "Code" }]}>
+            <TabItem active>
+              <Preview>
+                <BentoDemo />
+              </Preview>
+            </TabItem>
+            <TabItem>
+              <CodeBlock
+                client:only="react"
+                lang="typescript"
+                code={basicUsageCode}
+              />
+            </TabItem>
+          </Tab>
+        </Prose>
+        <Prose>
+          <Heading level={2} text="Import" />
+          <Text>
+            To use the Bento Grid component in your project, import it as
+            follows:
+          </Text>
+          <CodeBlock client:only="react" lang="typescript" code={importCode} />
+        </Prose>
+        <Prose>
+          <Heading level={2} text="Usage" />
+          <Text>
+            The Bento Grid allows you to divide your content into well-organized
+            sections using a row-and-column-based layout system. Here's an
+            example of basic usage:
+          </Text>
+          <Heading level={3} text="Basic Usage" />
+          <Tab tabs={[{ label: "Code", active: true }]}>
+            <TabItem active>
+              <CodeBlock
+                client:only="react"
+                lang="typescript"
+                code={UsageCode}
+              />
+            </TabItem>
+          </Tab>
+        </Prose>
+        <Prose>
+          <Heading level={2} text="Key Features" />
+          <List>
+            <ListItem>
+              <Text>
+                <strong>Complete flexibility</strong>: Easily configure rows and
+                columns, including both dynamic and fixed sizes.
+              </Text>
+            </ListItem>
+            <ListItem>
+              <Text>
+                <strong>Responsive design</strong>: The grid automatically
+                adapts to different screen sizes, ensuring a seamless visual
+                experience across devices.
+              </Text>
+            </ListItem>
+            <ListItem>
+              <Text>
+                <strong>Effortless integration</strong>: Seamlessly integrates
+                with your application's styles and themes, supporting advanced
+                layout configurations.
+              </Text>
+            </ListItem>
+          </List>
+        </Prose>
+      </Article>
+    </section>
+  </Content>
+</Layout>
+
+<style>
+  .custom-button {
+    --ac-btn-border-radius: 999px;
+    --ac-btn-font-weight: 600;
+    border-width: 0;
+    background-image: linear-gradient(
+      90deg,
+      rgb(var(--ac-primary)) 0%,
+      rgb(var(--ac-secondary)) 100%
+    );
+  }
+</style>

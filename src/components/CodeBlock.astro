@@ -1,0 +1,12 @@
+---
+import CodeBlockComponent from "../components/ui/CodeBlock";
+
+interface Props {
+  lang?: string;
+  code: string;
+}
+
+const { lang, code } = Astro.props;
+---
+
+<CodeBlockComponent client:only lang={lang} code={code} />

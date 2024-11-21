@@ -1,0 +1,43 @@
+---
+import Button from "./ui/Button";
+---
+
+<section
+  class="flex justify-center items-center w-full h-screen px-12 lg:px-20 2xl:px-32 lg:mt-[100px] lg:h-fit lg:py-40"
+>
+  <div class="flex flex-col justify-center items-center text-center max-w-5xl">
+    <h1
+      class="text-4xl md:text-6xl lg:text-6xl xl:text-8xl font-bold mt-8 lg:mt-0"
+    >
+      Design <span class="text-secondary vibration">purrfection</span> for your web
+      apps
+    </h1>
+    <p class="text-sm md:text-xl font-light text-pretty mt-4 md:mt-8">
+      Seamlessly integrate stylish, modern components into your projects, with
+      effortless animations and no extra styling needed.
+    </p>
+    <Button
+      href="/components/background"
+      content="Browse coponents"
+      buttonContainerClass="mt-8"
+      buttonClass="py-3 px-6"
+    />
+    <div class="flex flex-row gap-4 mt-8">
+      <img
+        src="./public/icons/react.svg"
+        alt="React Icon"
+        class="w-full max-w-[38px]"
+      />
+      <img
+        src="./public/icons/typescript.svg"
+        alt="Typescript Icon"
+        class="w-full max-w-[38px]"
+      />
+      <img
+        src="./public/icons/tailwindcss.svg"
+        alt="TailwindCss Icon"
+        class="w-full max-w-[38px]"
+      />
+    </div>
+  </div>
+</section>

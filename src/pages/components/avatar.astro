@@ -1,0 +1,127 @@
+---
+import { basicUsageCode, importCode, UsageCode } from "../../data/avatar";
+import { Button as ButtonAc, Tab, TabItem } from "free-astro-components";
+import Article from "../../components/Article.astro";
+import CodeBlock from "../../components/ui/CodeBlock";
+import Content from "../../layouts/Content.astro";
+import Header from "../../components/Header.astro";
+import Heading from "../../components/Heading.astro";
+import Layout from "../../layouts/Layout.astro";
+import List from "../../components/List.astro";
+import ListItem from "../../components/ListItem.astro";
+import Preview from "../../components/Preview.astro";
+import Prose from "../../components/Prose.astro";
+import Sidebar from "../../layouts/Sidebar.astro";
+import Text from "../../components/Text.astro";
+import AvatarDemo from "../components/tsx/Avatar";
+import "@/styles/globals.css";
+---
+
+<Layout title="Purrfect UI Components - Avatar">
+  <Header />
+  <Sidebar />
+  <Content>
+    <section>
+      <Article>
+        <Heading
+          slot="header"
+          level={1}
+          gradient
+          class="inline-block"
+          text="Avatar"
+        />
+        <Prose>
+          <Tab tabs={[{ label: "Preview", active: true }, { label: "Code" }]}>
+            <TabItem active>
+              <Preview>
+                <div class="ps-10 pt-12">
+                  <AvatarDemo />
+                </div>
+              </Preview>
+            </TabItem>
+            <TabItem>
+              <CodeBlock
+                client:only="react"
+                lang="typescript"
+                code={basicUsageCode}
+              />
+            </TabItem>
+          </Tab>
+        </Prose>
+        <Prose>
+          <Heading level={2} text="Import" />
+          <Text>
+            To use the Avatar component in your project, import it as follows:
+          </Text>
+          <CodeBlock client:only="react" lang="typescript" code={importCode} />
+        </Prose>
+        <Prose>
+          <Heading level={2} text="Usage" />
+          <Text>
+            The Avatar component is designed to be simple yet powerful, allowing
+            you to display user profiles or placeholders effortlessly. Here's an
+            example of its basic usage:
+          </Text>
+          <Heading level={3} text="Basic Usage" />
+          <Tab tabs={[{ label: "Code", active: true }]}>
+            <TabItem active>
+              <CodeBlock
+                client:only="react"
+                lang="typescript"
+                code={UsageCode}
+              />
+            </TabItem>
+          </Tab>
+        </Prose>
+        <Prose>
+          <Heading level={2} text="Key Features" />
+          <List>
+            <ListItem>
+              <Text>
+                <strong>Customizable Sizes</strong>: Choose between small,
+                medium, or large avatars to fit your design needs.
+              </Text>
+            </ListItem>
+            <ListItem>
+              <Text>
+                <strong>Dynamic Shapes</strong>: Supports both circular and
+                square shapes for flexible styling.
+              </Text>
+            </ListItem>
+            <ListItem>
+              <Text>
+                <strong>Fallback Options</strong>: Displays initials or a
+                default icon when no image is provided.
+              </Text>
+            </ListItem>
+            <ListItem>
+              <Text>
+                <strong>Accessibility Friendly</strong>: Includes alt text
+                support for improved screen reader compatibility.
+              </Text>
+            </ListItem>
+            <ListItem>
+              <Text>
+                <strong>Integrates Seamlessly</strong>: Works with your existing
+                themes and supports custom class names for extended styling.
+              </Text>
+            </ListItem>
+          </List>
+        </Prose>
+      </Article>
+    </section>
+  </Content>
+</Layout>
+
+<style>
+  .custom-button {
+    --ac-btn-border-radius: 999px;
+    --ac-btn-font-weight: 600;
+    border-width: 0;
+    background-image: linear-gradient(
+      90deg,
+      rgb(var(--ac-primary)) 0%,
+      rgb(var(--ac-secondary)) 100%
+    );
+  }
+</style>

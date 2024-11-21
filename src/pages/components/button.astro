@@ -1,0 +1,130 @@
+---
+import { basicUsageCode, importCode, UsageCode } from "../../data/button";
+import { Button as ButtonAc, Tab, TabItem } from "free-astro-components";
+import Article from "../../components/Article.astro";
+import CodeBlock from "../../components/ui/CodeBlock";
+import Content from "../../layouts/Content.astro";
+import Header from "../../components/Header.astro";
+import Heading from "../../components/Heading.astro";
+import Layout from "../../layouts/Layout.astro";
+import List from "../../components/List.astro";
+import ListItem from "../../components/ListItem.astro";
+import Preview from "../../components/Preview.astro";
+import Prose from "../../components/Prose.astro";
+import Sidebar from "../../layouts/Sidebar.astro";
+import Text from "../../components/Text.astro";
+import ButtonComponent from "../../components/ui/Button";
+import "@/styles/globals.css";
+---
+
+<Layout title="Purrfect UI Components - Light Button">
+  <Header />
+  <Sidebar />
+  <Content>
+    <section>
+      <Article>
+        <Heading
+          slot="header"
+          level={1}
+          gradient
+          class="inline-block"
+          text="Interactive Gradient Button"
+        />
+        <Prose>
+          <Tab tabs={[{ label: "Preview", active: true }, { label: "Code" }]}>
+            <TabItem active>
+              <Preview>
+                <ButtonComponent
+                  href="#"
+                  content="Click Me to Explore!"
+                  buttonClass="py-3 px-6"
+                />
+              </Preview>
+            </TabItem>
+            <TabItem>
+              <CodeBlock
+                client:only="react"
+                lang="typescript"
+                code={basicUsageCode}
+              />
+            </TabItem>
+          </Tab>
+        </Prose>
+        <Prose>
+          <Heading level={2} text="Import" />
+          <Text>
+            Start using the Button component by importing it into your project
+            as shown below:
+          </Text>
+          <CodeBlock client:only="react" lang="typescript" code={importCode} />
+        </Prose>
+        <Prose>
+          <Heading level={2} text="Usage" />
+          <Text>
+            The Button component is designed to enhance user interaction with
+            stunning visuals and seamless animations. Here's an example of how
+            to use it:
+          </Text>
+          <Heading level={3} text="Basic Usage" />
+          <Tab tabs={[{ label: "Code", active: true }]}>
+            <TabItem active>
+              <CodeBlock
+                client:only="react"
+                lang="typescript"
+                code={UsageCode}
+              />
+            </TabItem>
+          </Tab>
+        </Prose>
+        <Prose>
+          <Heading level={2} text="Key Features" />
+          <List>
+            <ListItem>
+              <Text>
+                <strong>Gradient Background</strong>: Dynamic gradient styles
+                that grab attention.
+              </Text>
+            </ListItem>
+            <ListItem>
+              <Text>
+                <strong>Hover Effects</strong>: Subtle scaling and radial
+                effects for a modern touch.
+              </Text>
+            </ListItem>
+            <ListItem>
+              <Text>
+                <strong>Accessible</strong>: Designed with accessibility in mind
+                for all users.
+              </Text>
+            </ListItem>
+            <ListItem>
+              <Text>
+                <strong>Customizable</strong>: Fully adaptable to fit your
+                brand's style and identity.
+              </Text>
+            </ListItem>
+            <ListItem>
+              <Text>
+                <strong>Lightweight</strong>: Optimized for performance without
+                compromising design.
+              </Text>
+            </ListItem>
+          </List>
+        </Prose>
+      </Article>
+    </section>
+  </Content>
+</Layout>
+
+<style>
+  .custom-button {
+    --ac-btn-border-radius: 999px;
+    --ac-btn-font-weight: 600;
+    border-width: 0;
+    background-image: linear-gradient(
+      90deg,
+      rgb(var(--ac-primary)) 0%,
+      rgb(var(--ac-secondary)) 100%
+    );
+  }
+</style>

@@ -1,0 +1,23 @@
+---
+import AvatarDemo from "./Avatar";
+import Button from "./ui/Button";
+import CodeComponent from "./ui/Code";
+---
+
+<div class="container flex flex-col justify-center items-center pt-28 pb-40">
+  <div
+    class="flex flex-col lg:flex-row gap-10 lg:gap-20 justify-center items-center w-full h-fit"
+  >
+    <Button
+      href="#"
+      content="This is a button example"
+      buttonClass="py-3 px-6"
+    />
+    <AvatarDemo />
+    <CodeComponent
+      client:only="react"
+      code="This is a code block example"
+      codeClass="px-6 py-3 space-x-2"
+    />
+  </div>
+</div>

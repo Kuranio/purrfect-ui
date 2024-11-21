@@ -1,0 +1,20 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Sidebar from "../layouts/Sidebar.astro";
+import RightSidebar from "../layouts/RightSidebar.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../layouts/Footer.astro";
+import Intro from "../components/Intro.astro";
+import Bento from "../components/Bento.astro";
+import RestComponents from "../components/RestComponents.astro"; // Ensure this path is correct or the file exists
+import "@/styles/globals.css";
+---
+
+<Layout title="Purrfect/UI">
+  <Sidebar class="lg:hidden" />
+  <Navbar />
+  <Intro />
+  <Bento />
+  <RestComponents />
+  <Footer />
+</Layout>

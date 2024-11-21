@@ -1,0 +1,164 @@
+---
+import {
+  basicUsageCode,
+  importCode,
+  UsageCode,
+  cursorCode,
+} from "../../data/background";
+import { Button as ButtonAc, Tab, TabItem } from "free-astro-components";
+import Article from "../../components/Article.astro";
+import CodeBlock from "../../components/ui/CodeBlock";
+import Content from "../../layouts/Content.astro";
+import Header from "../../components/Header.astro";
+import Heading from "../../components/Heading.astro";
+import Layout from "../../layouts/Layout.astro";
+import List from "../../components/List.astro";
+import ListItem from "../../components/ListItem.astro";
+import Preview from "../../components/Preview.astro";
+import Prose from "../../components/Prose.astro";
+import Sidebar from "../../layouts/Sidebar.astro";
+import Text from "../../components/Text.astro";
+import BackgroundComponent from "../../components/ui/Background";
+import "@/styles/globals.css";
+---
+
+<Layout title="Purrfect UI Components - Background & Cursor">
+  <Header />
+  <Sidebar />
+  <Content>
+    <section>
+      <Article>
+        <Heading
+          slot="header"
+          level={1}
+          gradient
+          class="inline-block"
+          text="Background & Cursor"
+        />
+        <Prose>
+          <Tab
+            tabs={[
+              { label: "Preview", active: true },
+              { label: "Code (Background)" },
+              { label: "Code (Cursor)" },
+            ]}
+          >
+            <TabItem active>
+              <Preview>
+                <div class="relative h-[300px]">
+                  <div
+                    class="absolute inset-0 flex-1 opacity-100 pointer-events-none mix-blend-multiply transition-opacity duration-300 ease-in-out group-hover:opacity-30"
+                  >
+                    <BackgroundComponent client:only="react" color="white" />
+                  </div>
+                  <div class="cursor relative left-20 top-20">
+                    <div
+                      class="absolute block pointer-events-none z-[9999] translate-x-[-50%] translate-y-[-50%] top-[0] left-[-1px] w-4 h-4 before:content-[''] before:absolute before:inset-0 before:bg-white before:border-2 before:border-transparent before:rounded-full before:shadow-[0_0_25px_rgba(0,0,0,0.5)] before:scale-50"
+                    >
+                    </div>
+                    <div
+                      class="block pointer-events-none z-[9999] translate-x-[-50%] translate-y-[-50%] top-[-5vh] left-[-5vh] w-[10vh] h-[10vh] transition-all duration-[800ms] ease-[cubic-bezier(0.05,0.8,0.4,1)] before:content-[''] before:absolute before:inset-0 before:border before:border-[#FFFFFF80] before:rounded-full before:scale-100 before:transition-transform before:duration-300"
+                    >
+                    </div>
+                  </div>
+                </div>
+              </Preview>
+            </TabItem>
+            <TabItem>
+              <CodeBlock
+                client:only="react"
+                lang="typescript"
+                code={basicUsageCode}
+              />
+            </TabItem>
+            <TabItem>
+              <CodeBlock
+                client:only="react"
+                lang="typescript"
+                code={cursorCode}
+              />
+            </TabItem>
+          </Tab>
+        </Prose>
+        <Prose>
+          <Heading level={2} text="Import" />
+          <Text>
+            To use the Background and Cursor components in your project, import
+            them as follows:
+          </Text>
+          <CodeBlock client:only="react" lang="typescript" code={importCode} />
+        </Prose>
+        <Prose>
+          <Heading level={2} text="Usage" />
+          <Text>
+            These components combine to create an interactive background grid
+            with a cursor effect that reacts to mouse movements. Here's an
+            example of how to use them together:
+          </Text>
+          <Heading level={3} text="Basic Usage" />
+          <Tab tabs={[{ label: "Code", active: true }]}>
+            <TabItem active>
+              <CodeBlock
+                client:only="react"
+                lang="typescript"
+                code={UsageCode}
+              />
+            </TabItem>
+          </Tab>
+        </Prose>
+        <Prose>
+          <Heading level={2} text="Key Features" />
+          <List>
+            <ListItem>
+              <Text>
+                <strong>Dynamic Grid</strong>: Automatically adjusts the number
+                of squares based on screen size, offering a responsive and
+                adaptive background.
+              </Text>
+            </ListItem>
+            <ListItem>
+              <Text>
+                <strong>Customizable Appearance</strong>: Easily change the
+                color, stroke, gap, and scaling of the grid, or apply a mask to
+                create an interactive effect.
+              </Text>
+            </ListItem>
+            <ListItem>
+              <Text>
+                <strong>Interactive Cursor</strong>: The cursor dynamically
+                moves and interacts with the background, enhancing the overall
+                user experience.
+              </Text>
+            </ListItem>
+            <ListItem>
+              <Text>
+                <strong>Accessibility Friendly</strong>: Supports visual
+                adjustments and custom styling for better usability.
+              </Text>
+            </ListItem>
+            <ListItem>
+              <Text>
+                <strong>Lightweight</strong>: Efficiently handles large grids
+                with minimal performance impact, ensuring smooth interactions
+                across devices.
+              </Text>
+            </ListItem>
+          </List>
+        </Prose>
+      </Article>
+    </section>
+  </Content>
+</Layout>
+
+<style>
+  .custom-button {
+    --ac-btn-border-radius: 999px;
+    --ac-btn-font-weight: 600;
+    border-width: 0;
+    background-image: linear-gradient(
+      90deg,
+      rgb(var(--ac-primary)) 0%,
+      rgb(var(--ac-secondary)) 100%
+    );
+  }
+</style>

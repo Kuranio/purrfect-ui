@@ -1,0 +1,137 @@
+---
+import {
+  basicUsageCode,
+  importCode,
+  UsageCode,
+  viteConfig,
+} from "../../data/codeblock";
+import { Button as ButtonAc, Tab, TabItem } from "free-astro-components";
+import Article from "../../components/Article.astro";
+import CodeBlock from "../../components/ui/CodeBlock";
+import Content from "../../layouts/Content.astro";
+import Header from "../../components/Header.astro";
+import Heading from "../../components/Heading.astro";
+import Layout from "../../layouts/Layout.astro";
+import List from "../../components/List.astro";
+import ListItem from "../../components/ListItem.astro";
+import Preview from "../../components/Preview.astro";
+import Prose from "../../components/Prose.astro";
+import Sidebar from "../../layouts/Sidebar.astro";
+import Text from "../../components/Text.astro";
+import "@/styles/globals.css";
+---
+
+<Layout title="Purrfect UI Components - Code Block">
+  <Header />
+  <Sidebar />
+  <Content>
+    <section>
+      <Article>
+        <Heading
+          slot="header"
+          level={1}
+          gradient
+          class="inline-block"
+          text="Syntax Highlighted Code Block"
+        />
+        <Prose>
+          <Tab tabs={[{ label: "Preview", active: true }, { label: "Code" }]}>
+            <TabItem active>
+              <Preview>
+                <CodeBlock
+                  client:only="react"
+                  lang="markdown"
+                  code="This code block"
+                />
+              </Preview>
+            </TabItem>
+            <TabItem>
+              <CodeBlock
+                client:only="react"
+                lang="typescript"
+                code={basicUsageCode}
+              />
+            </TabItem>
+          </Tab>
+        </Prose>
+        <Prose>
+          <Heading level={2} text="Import" />
+          <Text>
+            To use the Code component in your project, import it as follows:
+          </Text>
+          <CodeBlock client:only="react" lang="typescript" code={importCode} />
+        </Prose>
+        <Prose>
+          <Heading level={3} text="If you are using VITE:" />
+          <Text> vite.config.js </Text>
+          <CodeBlock client:only="react" lang="typescript" code={viteConfig} />
+        </Prose>
+        <Prose>
+          <Heading level={2} text="Usage" />
+          <Text>
+            The Code component is designed to make embedding and presenting code
+            snippets easy. Below is an example of its basic usage:
+          </Text>
+          <Heading level={3} text="Basic Usage" />
+          <Tab tabs={[{ label: "Code", active: true }]}>
+            <TabItem active>
+              <CodeBlock
+                client:only="react"
+                lang="typescript"
+                code={UsageCode}
+              />
+            </TabItem>
+          </Tab>
+        </Prose>
+        <Prose>
+          <Heading level={2} text="Key Features" />
+          <List>
+            <ListItem>
+              <Text>
+                <strong>Syntax Highlighting</strong>: Automatic language
+                detection for improved readability.
+              </Text>
+            </ListItem>
+            <ListItem>
+              <Text>
+                <strong>Customizable Themes</strong>: Supports multiple themes
+                for styling code blocks.
+              </Text>
+            </ListItem>
+            <ListItem>
+              <Text>
+                <strong>Responsive Design</strong>: Scales perfectly across all
+                devices.
+              </Text>
+            </ListItem>
+            <ListItem>
+              <Text>
+                <strong>Easy Integration</strong>: Works right out of the box
+                with minimal configuration required.
+              </Text>
+            </ListItem>
+            <ListItem>
+              <Text>
+                <strong>Lightweight</strong>: Designed to be fast and efficient
+                in performance.
+              </Text>
+            </ListItem>
+          </List>
+        </Prose>
+      </Article>
+    </section>
+  </Content>
+</Layout>
+
+<style>
+  .custom-button {
+    --ac-btn-border-radius: 999px;
+    --ac-btn-font-weight: 600;
+    border-width: 0;
+    background-image: linear-gradient(
+      90deg,
+      rgb(var(--ac-primary)) 0%,
+      rgb(var(--ac-secondary)) 100%
+    );
+  }
+</style>
