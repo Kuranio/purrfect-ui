@@ -1,47 +1,69 @@
-# Astro Starter Kit: Minimal
+<img src="https://raw.githubusercontent.com/Kuranio/purrfect-ui/refs/heads/master/public/images/logo-readme-preview.webp" alt="Purrfect logo preview" style="border-radius: 8px">
 
-```sh
-npm create astro@latest -- --template minimal
+
+<div align="center">
+  <h3 align="center">Purrfect UI</h3>
+
+  <p align="center">
+      Design <span style="font-weight: bold; color: #fd80fb;">purrfection</span> for your web apps
+  </p>
+
+  
+  ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+  ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+  ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+
+</div>
+
+
+## Documentation
+
+Welcome to **Purrfect UI**, a collection of sleek and customizable UI components designed to bring your web projects to life. With a focus on simplicity and usability, **Purrfect UI** offers an easy-to-integrate solution for building beautiful user interfaces.
+
+## 📦 Getting Started
+
+> Purrfect UI require **React >=16.8.0**.
+
+To get started with Purrfect UI, simply install it via npm:
+
+```bash
+npm install @purrfect-ui/components
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+### - Configure your template paths
+tailwind.config.ts
+```tsx
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@purrfect-ui/components/dist/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+### - Import the Components
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```tsx
+import { Avatar } from '@purrfect-ui/components';
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
+### - Usage
 
-## 🧞 Commands
+```jsx
+  <Avatar name="Raúl García" description="Frontend Developer" src="https://unavatar.io/github/kuranio" />
+```
 
-All commands are run from the root of the project, from a terminal:
+## 🌱 Contributing
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+We love contributions! If you have a bug fix, feature request, or enhancement to suggest, feel free to open an issue or pull request. We encourage you to create new components and submit them to make Purrfect UI even more purrfect.
 
-## 👀 Want to learn more?
+## 📝 License
+Purrfect UI is released under the MIT License. Feel free to use it, modify it, and contribute to it!
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## 📞 Contact
+Created with ❤️ by Raúl García Díaz.
