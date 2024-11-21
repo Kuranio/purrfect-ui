@@ -30,7 +30,7 @@ To get started with Purrfect UI, simply install it via npm:
 npm install @purrfect-ui/components
 ```
 
-### - Configure your template paths
+### Configure your template paths
 tailwind.config.ts
 ```tsx
 /** @type {import('tailwindcss').Config} */
@@ -46,17 +46,19 @@ export default {
 };
 ```
 
-### - Import the Components
+### Import the Components
 
 ```tsx
 import { Avatar } from '@purrfect-ui/components';
 ```
 
-### - Usage
+### Usage
 
 ```jsx
   <Avatar name="Raúl García" description="Frontend Developer" src="https://unavatar.io/github/kuranio" />
 ```
+
+### Learn more at <a href="https://purrfect-ui.netlify.app/" target="_blank"> Purrfect UI </a>
 
 ## 🌱 Contributing
 
