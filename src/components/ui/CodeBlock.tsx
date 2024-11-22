@@ -3,13 +3,11 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 interface Props {
-  frame?: 'none' | 'code' | 'terminal' | 'auto'
   lang?: string
-  title?: string
   code: string
 }
 
-const CodeBlock: React.FC<Props> = ({ frame = 'auto', lang = '', title, code }) => {
+const CodeBlock: React.FC<Props> = ({ lang = '', code }) => {
   return (
     <div className="bg-gradient-to-r from-primary/50 to-secondary/50 appearance-none rounded-lg p-px">
       <SyntaxHighlighter

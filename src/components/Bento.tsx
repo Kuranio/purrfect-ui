@@ -1,4 +1,3 @@
-import React from 'react';
 import { BentoGrid, BentoCard } from "./ui/Bento"
 
 const features = [
