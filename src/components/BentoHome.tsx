@@ -4,7 +4,7 @@ const features = [
   {
     Icon: () => <span>🏙️</span>,
     name: "Future-Ready Infrastructure",
-    description: "Cutting-edge solutions for smart cities.",
+    description: "Smart solutions for cities.",
     href: "#",
     cta: "Learn more",
     className: "col-span-3 sm:col-span-2 lg:col-span-2 2xl:col-span-1 bg-gradient-to-r from-primary/50 to-secondary/50 appearance-none",
@@ -19,7 +19,7 @@ const features = [
   {
     Icon: () => <span>🤖</span>,
     name: "Revolutionize Your Workflow",
-    description: "Integrate artificial intelligence to optimize and automate your daily tasks.",
+    description: "Optimize daily tasks efficiently.",
     href: "#",
     cta: "Learn more",
     className: "col-span-3 sm:col-span-1 lg:col-span-2 2xl:col-span-3 bg-gradient-to-r from-primary/50 to-secondary/50 appearance-none",
@@ -34,7 +34,7 @@ const features = [
   {
     Icon: () => <span>📡</span>,
     name: "Analyze the Unseen",
-    description: "Unlock the hidden patterns in your data with next-gen analytics tools.",
+    description: "Discover patterns in data.",
     href: "#",
     cta: "Learn more",
     className: "col-span-3 sm:col-span-1 lg:col-span-1 2xl:col-span-2 bg-gradient-to-r from-primary/50 to-secondary/50 appearance-none",
@@ -49,7 +49,7 @@ const features = [
   {
     Icon: () => <span>🌐</span>,
     name: "Work Beyond Borders",
-    description: "Tools for productivity anywhere.",
+    description: "Work productively from anywhere.",
     className: "col-span-3 sm:col-span-2 lg:col-span-2 2xl:col-span-2 bg-gradient-to-r from-primary/50 to-secondary/50 appearance-none",
     href: "#",
     cta: "Learn more",
@@ -64,8 +64,8 @@ const features = [
   {
     Icon: () => <span>💡</span>,
     name: "Creative Spark",
-    description: "Generate innovative ideas with AI creativity tools.",
-    className: "hidden lg:block col-span-1 lg:col-span-1 2xl:col-span-2 bg-gradient-to-r from-primary/50 to-secondary/50 appearance-none",
+    description: "Innovate with AI tools.",
+    className: "hidden lg:flex col-span-1 lg:col-span-1 2xl:col-span-2 bg-gradient-to-r from-primary/50 to-secondary/50 appearance-none",
     href: "#",
     cta: "Learn more",
     background: (
@@ -79,8 +79,8 @@ const features = [
   {
     Icon: () => <span>📊</span>,
     name: "Predictive Models",
-    description: "Forecast the future with AI-driven predictions",
-    className: "hidden lg:block col-span-2 lg:col-span-2 2xl:col-span-2 bg-gradient-to-r from-primary/50 to-secondary/50 appearance-none",
+    description: "AI-driven future predictions.",
+    className: "hidden lg:flex col-span-2 lg:col-span-2 2xl:col-span-2 bg-gradient-to-r from-primary/50 to-secondary/50 appearance-none",
     href: "#",
     cta: "Learn more",
     background: (
@@ -94,8 +94,8 @@ const features = [
   {
     Icon: () => <span>🧠</span>,
     name: "Smart Insights",
-    description: "Unlock hidden patterns with machine learning.",
-    className: "hidden lg:block col-span-3 lg:col-span-1 2xl:col-span-2 bg-gradient-to-r from-primary/50 to-secondary/50 appearance-none",
+    description: "Learn patterns with AI.",
+    className: "hidden lg:flex col-span-3 lg:col-span-1 2xl:col-span-2 bg-gradient-to-r from-primary/50 to-secondary/50 appearance-none",
     href: "#",
     cta: "Learn more",
     background: (
@@ -109,8 +109,8 @@ const features = [
   {
     Icon: () => <span>🔍</span>,
     name: "Deep Search",
-    description: "AI-powered precise search.",
-    className: "hidden lg:block col-span-3 lg:col-span-1 2xl:col-span-1 bg-gradient-to-r from-primary/50 to-secondary/50 appearance-none",
+    description: "AI-precise search results.",
+    className: "hidden lg:flex col-span-3 lg:col-span-1 2xl:col-span-1 bg-gradient-to-r from-primary/50 to-secondary/50 appearance-none",
     href: "#",
     cta: "Learn more",
     background: (
@@ -124,8 +124,8 @@ const features = [
   {
     Icon: () => <span>🌍</span>,
     name: "AI for All",
-    description: "Bringing artificial intelligence to every corner of the world.",
-    className: "hidden lg:block col-span-3 lg:hidden 2xl:block 2xl:col-span-3 bg-gradient-to-r from-primary/50 to-secondary/50 appearance-none",
+    description: "AI everywhere for everyone.",
+    className: "hidden lg:flex col-span-3 lg:hidden 2xl:flex 2xl:col-span-3 bg-gradient-to-r from-primary/50 to-secondary/50 appearance-none",
     href: "#",
     cta: "Learn more",
     background: (
