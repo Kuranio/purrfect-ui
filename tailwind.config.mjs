@@ -54,9 +54,4 @@ export default {
       },
     },
   },
-  plugins: [
-    plugin(({ addVariant }) => {
-      addVariant("group-hover", "&:hover"); // Añade soporte para group-hover
-    }),
-  ],
 };
