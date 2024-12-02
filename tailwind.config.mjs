@@ -38,7 +38,25 @@ export default {
       backgroundImage: {
         "button-background-radial": `radial-gradient(75% 100% at 50% 0%, rgba(131, 255, 255, 0.4) 0%, rgba(131, 255, 255, 0) 75%)`,
       },
+      keyframes: {
+        "marquee-left": {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+        "marquee-right": {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(100%)" },
+        },
+      },
+      animation: {
+        "marquee-left": "marquee-left linear infinite",
+        "marquee-right": "marquee-right linear infinite",
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(({ addVariant }) => {
+      addVariant("group-hover", "&:hover"); // Añade soporte para group-hover
+    }),
+  ],
 };

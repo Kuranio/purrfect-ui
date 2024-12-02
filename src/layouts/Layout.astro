@@ -12,14 +12,44 @@ const { title } = Astro.props;
 <html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
+    <!-- Primary Meta Tags -->
+    <title>Purrfect/UI</title>
+    <meta name="title" content="Purrfect/UI" />
     <meta
       name="description"
       content="You can use these components to build your projects faster."
     />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://purrfect-ui.netlify.app/" />
+    <meta property="og:title" content="Purrfect/UI" />
+    <meta
+      property="og:description"
+      content="You can use these components to build your projects faster."
+    />
+    <meta
+      property="og:image"
+      content="https://metatags.io/images/meta-tags.png"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://purrfect-ui.netlify.app/" />
+    <meta property="twitter:title" content="Purrfect/UI" />
+    <meta
+      property="twitter:description"
+      content="You can use these components to build your projects faster."
+    />
+    <meta
+      property="twitter:image"
+      content="https://metatags.io/images/meta-tags.png"
+    />
+
+    <!-- Meta Tags Generated with https://metatags.io -->
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
   </head>
   <body class="md:cursor-[none]">
     <main>
